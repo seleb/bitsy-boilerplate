@@ -4,4 +4,8 @@
   "description": "",
   "author": "Sean S. LeBlanc",
   "license": "MIT",
+  "dependencies": {
+    "Bitsy": "github:le-doux/bitsy#master",
+    "bitsy-hacks": "github:seleb/bitsy-hacks#master",
+  },
 }
