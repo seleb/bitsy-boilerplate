@@ -2,10 +2,28 @@
   "name": "bitsy-boilerplate",
   "version": "1.0.0",
   "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-watch build",
+    "build": "node --experimental-modules index.mjs"
+  },
   "author": "Sean S. LeBlanc",
   "license": "MIT",
   "dependencies": {
     "Bitsy": "github:le-doux/bitsy#master",
     "bitsy-hacks": "github:seleb/bitsy-hacks#master",
+    "npm-watch": "^0.6.0"
   },
+  "devDependencies": {
+    "autoprefixer": "^9.4.8",
+    "postcss": "^7.0.14"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "input"
+      ],
+      "extensions": "txt,js,css"
+    }
+  }
 }
