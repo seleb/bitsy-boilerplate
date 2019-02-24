@@ -1,7 +1,7 @@
 {
   "name": "bitsy-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "tool for building bitsy games",
   "main": "index.js",
   "scripts": {
     "start": "npm-watch build",
