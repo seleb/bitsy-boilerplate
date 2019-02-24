@@ -1,4 +1,4 @@
-Write your game's title here2
+Write your game's title here
 
 # BITSY VERSION 5.4
 
