@@ -1,6 +1,6 @@
 Write your game's title here
 
-# BITSY VERSION 5.4
+# BITSY VERSION 6.0
 
 ! ROOM_FORMAT 1
 

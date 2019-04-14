@@ -15,6 +15,7 @@ async function build() {
 	const dialog = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/dialog.js');
 	const script = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/script.js');
 	const color_util = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/color_util.js');
+	const transition = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/transition.js');
 	const renderer = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/renderer.js');
 	const fontData = await fsp.readFile(`./node_modules/Bitsy/editor/shared/bitsyfont/${fontName}.bitsyfont`);
 
@@ -26,6 +27,7 @@ async function build() {
 		'@@D': gamedata,
 		"@@C": css,
 		'@@U': color_util,
+		'@@X': transition,
 		'@@F': font,
 		'@@S': script,
 		'@@L': dialog,
