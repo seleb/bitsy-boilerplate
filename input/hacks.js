@@ -1,2 +1,2 @@
-import 'bitsy-hacks/src/exit-from-dialog';
-import 'bitsy-hacks/src/gamepad input';
+import '@bitsy/hecks/src/exit-from-dialog';
+import '@bitsy/hecks/src/gamepad input';

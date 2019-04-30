@@ -10,8 +10,8 @@
   "author": "Sean S. LeBlanc",
   "license": "MIT",
   "dependencies": {
+    "@bitsy/hecks": "^1.0.0",
     "Bitsy": "github:le-doux/bitsy#master",
-    "bitsy-hacks": "github:seleb/bitsy-hacks#master",
     "npm-watch": "^0.6.0"
   },
   "devDependencies": {

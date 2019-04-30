@@ -21,7 +21,7 @@ the idea behind this is sort of like a scripted version of [Borksy](https://ayol
 
 - builds from bitsy repo source
 	- i.e. unpublished features
-- builds from bitsy-hacks repo source
+- builds from bitsy-hacks (`@bitsy/hecks`) module
 	- easy to combine hacks/customize their `hackOptions`
 	- easy setup for writing/testing new hacks
 	- smaller output when combining hacks (e.g. kitsy is only ever included once)
@@ -32,7 +32,7 @@ caveats:
 - builds from bitsy repo source
 	- i.e. unpublished bugs
 - custom hacks here use absolute imports, whereas ones in the hack repo are relative
-	- e.g. `import 'bitsy-hacks/src/bitsymuse';` vs. `import './bitsymuse';`
+	- e.g. `import '@bitsy/hecks/src/bitsymuse';` vs. `import './bitsymuse';`
 
 
 ## examples for editing `./input/hacks.js`
@@ -40,21 +40,21 @@ caveats:
 importing a hack from the hack repo:
 
 ```js
-import 'bitsy-hacks/src/gamepad input';
+import '@bitsy/hecks/src/gamepad input';
 ```
 
 combining hacks:
 
 ```js
-import 'bitsy-hacks/src/exit-from-dialog';
-import 'bitsy-hacks/src/end-from-dialog';
+import '@bitsy/hecks/src/exit-from-dialog';
+import '@bitsy/hecks/src/end-from-dialog';
 ```
 
 customizing hack options:
 
 ```js
-import { hackOptions as bitsymuse } from 'bitsy-hacks/src/bitsymuse';
-import { hackOptions as solidItems } from 'bitsy-hacks/src/solid items';
+import { hackOptions as bitsymuse } from '@bitsy/hecks/src/bitsymuse';
+import { hackOptions as solidItems } from '@bitsy/hecks/src/solid items';
 
 // customize music for bitsymuse
 bitsymuse.musicByRoom = {
@@ -74,8 +74,8 @@ writing a custom hack:
 import {
 	after,
 	addDialogTag,
-} from "bitsy-hacks/src/helpers/kitsy-script-toolkit";
-import { printDialog } from "bitsy-hacks/src/helpers/utils";
+} from "@bitsy/hecks/src/helpers/kitsy-script-toolkit";
+import { printDialog } from "@bitsy/hecks/src/helpers/utils";
 
 // save time on start
 var startTime;
