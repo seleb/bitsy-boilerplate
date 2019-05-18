@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "@bitsy/hecks": "^2.0.1",
+    "@bitsy/optimizer": "^1.0.1",
     "Bitsy": "github:le-doux/bitsy#master",
     "npm-watch": "^0.6.0"
   },
@@ -23,7 +24,7 @@
       "patterns": [
         "input"
       ],
-      "extensions": "txt,js,css"
+      "extensions": "txt,js,mjs,css"
     }
   }
 }

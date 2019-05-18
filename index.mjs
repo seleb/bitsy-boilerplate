@@ -1,5 +1,7 @@
 import fs from 'fs';
 import getCss from './getCss';
+import optimize from '@bitsy/optimizer';
+import optimizeOptions from './input/optimization';
 
 const fsp = fs.promises;
 
@@ -7,7 +9,7 @@ const fontName = 'ascii_small';
 
 async function build() {
 	const title = await fsp.readFile('./input/title.txt');
-	const gamedata = await fsp.readFile('./input/gamedata.txt');
+	const gamedata = await fsp.readFile('./input/gamedata.txt', 'utf8');
 	
 	const template = await fsp.readFile('./node_modules/Bitsy/editor/shared/other/exportTemplate.html', 'utf8');
 	const bitsy = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/bitsy.js');
@@ -24,7 +26,7 @@ async function build() {
 
 	const config = {
 		'@@T': title,
-		'@@D': gamedata,
+		'@@D': Object.values(optimizeOptions).includes(true) ? optimize(gamedata, optimizeOptions) : gamedata,
 		"@@C": css,
 		'@@U': color_util,
 		'@@X': transition,
