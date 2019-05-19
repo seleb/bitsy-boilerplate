@@ -11,6 +11,7 @@ the idea behind this is sort of like a scripted version of [Borksy](https://ayol
 1. edit `./input/title.txt` to be what you want the HTML title to be
 1. edit `./input/style.css` with custom style
 1. edit `./input/hacks.js` with hack inputs/options
+1. edit `./input/optimization.js` with optimization options
 1. run `npm start` or `npm run build`
 	- `start` will watch the input files and rebuild automatically when they're changed
 	- `build` will run once
@@ -26,6 +27,7 @@ the idea behind this is sort of like a scripted version of [Borksy](https://ayol
 	- easy setup for writing/testing new hacks
 	- smaller output when combining hacks (e.g. kitsy is only ever included once)
 - style is run through [autoprefixer](https://github.com/postcss/autoprefixer)
+- optionally optimizes gamedata for smaller final builds
 
 caveats:
 
