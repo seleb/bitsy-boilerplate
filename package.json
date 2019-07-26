@@ -10,13 +10,13 @@
   "author": "Sean S. LeBlanc",
   "license": "MIT",
   "dependencies": {
-    "@bitsy/hecks": "^4.4.1",
+    "@bitsy/hecks": "^4.5.0",
     "@bitsy/optimizer": "^1.0.1",
     "Bitsy": "github:le-doux/bitsy#9c3dcc5dafd77023c67d9b532d207f431eccd88b",
     "npm-watch": "^0.6.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.6.0",
+    "autoprefixer": "^9.6.1",
     "postcss": "^7.0.17"
   },
   "watch": {
