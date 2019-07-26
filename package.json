@@ -10,7 +10,7 @@
   "author": "Sean S. LeBlanc",
   "license": "MIT",
   "dependencies": {
-    "@bitsy/hecks": "^4.5.0",
+    "@bitsy/hecks": "^5.0.0",
     "@bitsy/optimizer": "^1.0.1",
     "Bitsy": "github:le-doux/bitsy#9c3dcc5dafd77023c67d9b532d207f431eccd88b",
     "npm-watch": "^0.6.0"
