@@ -35,7 +35,9 @@ caveats:
 	- i.e. unpublished bugs
 - custom hacks here use absolute imports, whereas ones in the hack repo are relative
 	- e.g. `import '@bitsy/hecks/src/bitsymuse';` vs. `import './bitsymuse';`
-
+- some hacks might use very large libraries that can slow down build time. as of now this is the case with 3d hack. it uses babylonjs library and can take much longer to build than the other hacks (this might also depend on your hardware). if you are using 3d hack and long build time is the problem, there is an option you can use to make build time reasonable:
+	- open `index.mjs` file that contains build script
+	- uncomment the following line: `// externalDeps.babylonjs = 'BABYLON';`
 
 ## examples for editing `./input/hacks.js`
 
