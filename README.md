@@ -7,16 +7,19 @@ the idea behind this is sort of like a scripted version of [Borksy](https://ayol
 ## how
 
 1. run `npm i`
-1. copy-paste your gamedata into `./input/gamedata.txt`
+	* optionally add path to your local bitsy-hacks repo:
+	`npm i ../bitsy-hacks`
+1. copy-paste your gamedata into `./input/gamedata.bitsy`
 1. edit `./input/title.txt` to be what you want the HTML title to be
 1. edit `./input/style.css` with custom style
 1. edit `./input/hacks.js` with hack inputs/options
 1. edit `./input/optimization.js` with optimization options
+1. edit `./input/exportTemplate.html` to add custom html, for example if you need to add audio
 1. run `npm start` or `npm run build`
 	- `start` will watch the input files and rebuild automatically when they're changed
 	- `build` will run once
 1. edit/rebuild as needed
-1. copy the generated `./index.html` when you're done
+1. copy the generated `./dist/index.html` when you're done
 
 ## why
 

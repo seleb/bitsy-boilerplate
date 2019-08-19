@@ -33,9 +33,9 @@ async function build() {
 	}));
 
 	const title = await fsp.readFile('./input/title.txt');
-	const gamedata = await fsp.readFile('./input/gamedata.txt', 'utf8');
+	const gamedata = await fsp.readFile('./input/gamedata.bitsy', 'utf8');
+	const template = await fsp.readFile('./input/exportTemplate.html', 'utf8');
 
-	const template = await fsp.readFile('./node_modules/Bitsy/editor/shared/other/exportTemplate.html', 'utf8');
 	const bitsy = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/bitsy.js');
 	const font = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/font.js');
 	const dialog = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/dialog.js');
@@ -68,7 +68,15 @@ async function build() {
 			(result, [key, value]) => result.replace(key, value),
 			template
 		);
-	await fsp.writeFile('./index.html', html);
+
+	try {
+		await fsp.mkdir('./dist');
+	}
+	catch (err) {
+		if (err.code !== 'EEXIST') console.error(err);
+	}
+
+	await fsp.writeFile('./dist/index.html', html);
 }
 
 build()

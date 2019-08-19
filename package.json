@@ -7,7 +7,7 @@
     "start": "npm-watch build",
     "build": "node --experimental-modules index.mjs"
   },
-  "author": "Sean S. LeBlanc",
+  "author": "Sean S. LeBlanc & Elkie Nova",
   "license": "MIT",
   "dependencies": {
     "@bitsy/hecks": "github:aloelazoe/bitsy-hacks",
@@ -28,7 +28,7 @@
       "patterns": [
         "input"
       ],
-      "extensions": "txt,js,mjs,css"
+      "extensions": "txt,js,mjs,css,bitsy,html"
     }
   }
 }
