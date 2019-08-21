@@ -4,8 +4,7 @@
   "description": "tool for building bitsy games",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm run fetch-bitsy",
-    "fetch-bitsy": "node fetch-bitsy-source.js",
+    "update-bitsy": "node fetch-bitsy-source.js",
     "build": "node --experimental-modules index.mjs",
     "start": "npm-watch build"
   },

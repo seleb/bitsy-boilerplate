@@ -38,6 +38,8 @@ async function fetchFile(url, savePath) {
 async function fetchBitsyFiles(version = safeCommit) {
 	console.log('installing bitsy files');
 	// TODO: use readline to ask for confirmation if template.html already exists
+	// it will be useful even if i decide to inculde bitsy source in the repo itself,
+	// and only use this script to fetch updates
 	fsp.access(path.join('.', 'input', 'template.html'), fs.constants.F_OK)
 		.then(() => console.log("template.html already exists! do you want to overwrite it? (y/n)\nconsider making a backup first if you don't want to loose your work"))
 		.catch(function(){return});
