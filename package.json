@@ -4,16 +4,19 @@
   "description": "tool for building bitsy games",
   "main": "index.js",
   "scripts": {
-    "start": "npm-watch build",
-    "build": "node --experimental-modules index.mjs"
+    "postinstall": "npm run fetch-bitsy",
+    "fetch-bitsy": "node fetch-bitsy-source.js",
+    "build": "node --experimental-modules index.mjs",
+    "start": "npm-watch build"
   },
   "author": "Sean S. LeBlanc & Elkie Nova",
   "license": "MIT",
   "dependencies": {
     "@bitsy/hecks": "github:aloelazoe/bitsy-hacks",
     "@bitsy/optimizer": "^1.0.1",
-    "Bitsy": "github:le-doux/bitsy#9c3dcc5dafd77023c67d9b532d207f431eccd88b",
-    "npm-watch": "^0.6.0"
+    "npm-watch": "^0.6.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.1",

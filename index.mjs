@@ -34,16 +34,16 @@ async function build() {
 
 	const title = await fsp.readFile('./input/title.txt');
 	const gamedata = await fsp.readFile('./input/gamedata.bitsy', 'utf8');
-	const template = await fsp.readFile('./input/exportTemplate.html', 'utf8');
+	const template = await fsp.readFile('./input/template.html', 'utf8');
 
-	const bitsy = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/bitsy.js');
-	const font = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/font.js');
-	const dialog = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/dialog.js');
-	const script = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/script.js');
-	const color_util = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/color_util.js');
-	const transition = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/transition.js');
-	const renderer = await fsp.readFile('./node_modules/Bitsy/editor/shared/script/renderer.js');
-	const fontData = await fsp.readFile(`./node_modules/Bitsy/editor/shared/bitsyfont/${fontName}.bitsyfont`);
+	const bitsy = await fsp.readFile('./bitsy-source/scripts/bitsy.js');
+	const font = await fsp.readFile('./bitsy-source/scripts/font.js');
+	const dialog = await fsp.readFile('./bitsy-source/scripts/dialog.js');
+	const script = await fsp.readFile('./bitsy-source/scripts/script.js');
+	const color_util = await fsp.readFile('./bitsy-source/scripts/color_util.js');
+	const transition = await fsp.readFile('./bitsy-source/scripts/transition.js');
+	const renderer = await fsp.readFile('./bitsy-source/scripts/renderer.js');
+	const fontData = await fsp.readFile(`./bitsy-source/fonts/${fontName}.bitsyfont`);
 
 	const css = await getCss('./input/style.css');
 

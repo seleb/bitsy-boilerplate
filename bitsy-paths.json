@@ -1,0 +1,19 @@
+{
+  "template": "dev/resources/export/exportTemplate.html",
+  "scripts": [
+    "editor/script/engine/bitsy.js",
+    "editor/script/engine/font.js",
+    "editor/script/engine/dialog.js",
+    "editor/script/engine/script.js",
+    "editor/script/engine/color_util.js",
+    "editor/script/engine/transition.js",
+    "editor/script/engine/renderer.js"
+  ],
+  "fonts": [
+    "dev/resources/bitsyfont/arabic.bitsyfont",
+    "dev/resources/bitsyfont/ascii_small.bitsyfont",
+    "dev/resources/bitsyfont/unicode_asian.bitsyfont",
+    "dev/resources/bitsyfont/unicode_european_large.bitsyfont",
+    "dev/resources/bitsyfont/unicode_european_small.bitsyfont"
+  ]
+}

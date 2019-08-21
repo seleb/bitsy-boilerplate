@@ -14,7 +14,7 @@ the idea behind this is sort of like a scripted version of [Borksy](https://ayol
 1. edit `./input/style.css` with custom style
 1. edit `./input/hacks.js` with hack inputs/options
 1. edit `./input/optimization.js` with optimization options
-1. edit `./input/exportTemplate.html` to add custom html, for example if you need to add audio
+1. edit `./input/template.html` to add custom html, for example if you need to add audio
 1. run `npm start` or `npm run build`
 	- `start` will watch the input files and rebuild automatically when they're changed
 	- `build` will run once
