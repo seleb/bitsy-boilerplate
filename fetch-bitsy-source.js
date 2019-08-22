@@ -38,35 +38,16 @@ async function fetchFile(url, savePath) {
 async function fetchBitsyFiles(version = safeCommit) {
 	console.log('installing bitsy files');
 	// TODO: use readline to ask for confirmation if template.html already exists
-	// it will be useful even if i decide to inculde bitsy source in the repo itself,
-	// and only use this script to fetch updates
+	// it will be useful after inculding bitsy source in the repo itself too,
+	// keeping this script to be able to fetch updates
 	fsp.access(path.join('.', 'input', 'template.html'), fs.constants.F_OK)
 		.then(() => console.log("template.html already exists! do you want to overwrite it? (y/n)\nconsider making a backup first if you don't want to loose your work"))
 		.catch(function(){return});
 
 	let paths = JSON.parse(await fsp.readFile('./bitsy-paths.json'));
 	// arrays of paths into array of promises
-	return Promise.all(Object.entries(paths).map(function([key, value]) {
-		if (Array.isArray(value)) {
-			// if value is an array of paths save them in a folder together
-			return Promise.all(value.map(function(p) {
-				return fetchFile(
-					[bitsySourceUrl, version, p].join('/'),
-					path.join('.', 'bitsy-source', key, path.basename(p))
-				);
-			}));
-		} else if (key === 'template') {
-			return fetchFile(
-				[bitsySourceUrl, version, value].join('/'),
-				path.join('.', 'input', 'template.html')
-			);
-		} else {
-			// if value is a single path save it on its own
-			return fetchFile(
-				[bitsySourceUrl, version, value].join('/'),
-				path.join('.', 'bitsy-source', path.basename(value))
-			);
-		}
+	return Promise.all(Object.values(paths).map(function([repoPath, savePath]) {
+		return fetchFile([bitsySourceUrl, version, repoPath].join('/'), savePath);
 	}));
 }
 

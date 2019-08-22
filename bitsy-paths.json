@@ -1,19 +1,54 @@
 {
-  "template": "dev/resources/export/exportTemplate.html",
-  "scripts": [
-    "editor/script/engine/bitsy.js",
-    "editor/script/engine/font.js",
-    "editor/script/engine/dialog.js",
-    "editor/script/engine/script.js",
-    "editor/script/engine/color_util.js",
-    "editor/script/engine/transition.js",
-    "editor/script/engine/renderer.js"
+  "template": [
+    "dev/resources/export/exportTemplate.html",
+    "input/template.html"
   ],
-  "fonts": [
+  "bitsy": [
+    "editor/script/engine/bitsy.js",
+    "bitsy-source/scripts/bitsy.js"
+  ],
+  "font": [
+    "editor/script/engine/font.js",
+    "bitsy-source/scripts/font.js"
+  ],
+  "dialog": [
+    "editor/script/engine/dialog.js",
+    "bitsy-source/scripts/dialog.js"
+  ],
+  "script": [
+    "editor/script/engine/script.js",
+    "bitsy-source/scripts/script.js"
+  ],
+  "color_util": [
+    "editor/script/engine/color_util.js",
+    "bitsy-source/scripts/color_util.js"
+  ],
+  "transition": [
+    "editor/script/engine/transition.js",
+    "bitsy-source/scripts/transition.js"
+  ],
+  "renderer": [
+    "editor/script/engine/renderer.js",
+    "bitsy-source/scripts/renderer.js"
+  ],
+  "arabic": [
     "dev/resources/bitsyfont/arabic.bitsyfont",
+    "bitsy-source/fonts/arabic.bitsyfont"
+  ],
+  "ascii_small": [
     "dev/resources/bitsyfont/ascii_small.bitsyfont",
+    "bitsy-source/fonts/ascii_small.bitsyfont"
+  ],
+  "unicode_asian": [
     "dev/resources/bitsyfont/unicode_asian.bitsyfont",
+    "bitsy-source/fonts/unicode_asian.bitsyfont"
+  ],
+  "unicode_european_large": [
     "dev/resources/bitsyfont/unicode_european_large.bitsyfont",
-    "dev/resources/bitsyfont/unicode_european_small.bitsyfont"
+    "bitsy-source/fonts/unicode_european_large.bitsyfont"
+  ],
+  "unicode_european_small": [
+    "dev/resources/bitsyfont/unicode_european_small.bitsyfont",
+    "bitsy-source/fonts/unicode_european_small.bitsyfont"
   ]
 }
