@@ -13,7 +13,7 @@ export default {
 	],
 	external: [
 		...base.external,
-		Object.keys(external),
+		...Object.keys(external),
 	],
 	output: {
 		...base.output,
