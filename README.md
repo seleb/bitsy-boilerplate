@@ -8,7 +8,7 @@ the idea behind this is sort of like a scripted version of [Borksy](https://ayol
 
 1. run `npm i`
 	* optionally add path to your local bitsy-hacks repo:
-	`npm i ../bitsy-hacks`
+	`npm i /path/to/local/bitsy-hacks && npm run fetch-bitsy`
 1. copy-paste your gamedata into `./input/gamedata.bitsy`
 1. edit `./input/title.txt` to be what you want the HTML title to be
 1. edit `./input/style.css` with custom style

@@ -10,8 +10,8 @@
     "watch-html": "npm-watch build-html",
     "build": "npm run build-hacks&&npm run build-html",
     "start": "concurrently 'npm:watch-*'",
-    "update-bitsy": "node fetch-bitsy-source.js",
-    "postinstall": "node fetch-bitsy-source.js"
+    "fetch-bitsy": "node fetch-bitsy-source.js",
+    "postinstall": "npm run fetch-bitsy"
   },
   "author": "Sean S. LeBlanc & Elkie Nova",
   "license": "MIT",
