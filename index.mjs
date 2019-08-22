@@ -4,10 +4,6 @@ import optimize from '@bitsy/optimizer';
 import optimizeOptions from './input/optimization';
 import resolve from 'resolve';
 
-import {
-	build as buildHacks
-} from './build-hacks';
-
 const fsp = fs.promises;
 
 const fontName = 'ascii_small';
@@ -46,6 +42,7 @@ async function build() {
 	const fontData = await fsp.readFile(`./bitsy-source/fonts/${fontName}.bitsyfont`);
 
 	const css = await getCss('./input/style.css');
+	const hacks = await fsp.readFile(`./output/hacks.js`);
 
 	const config = {
 		'@@T': title,
@@ -60,7 +57,7 @@ async function build() {
 		'@@E': bitsy,
 		'@@N': fontName,
 		'@@M': fontData,
-		'</head>': ['<script>', externalDepsSrc.join('\n'), (await buildHacks(['./input/hacks.js'],[],externalDeps))[0], '</script>', '</head>'].join('\n'),
+		'</head>': ['<script>', externalDepsSrc.join('\n'), hacks, '</script>', '</head>'].join('\n'),
 	};
 
 	const html = Object.entries(config)
