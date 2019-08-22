@@ -15,6 +15,7 @@ the idea behind this is sort of like a scripted version of [Borksy](https://ayol
 1. edit `./input/hacks.js` with hack inputs/options
 1. edit `./input/optimization.js` with optimization options
 1. edit `./input/template.html` to add custom html, for example if you need to add audio
+1. edit `./external-deps.mjs` to specify what dependencies should be written to the output directly instead of being transpiled by rollup when building the hacks. in case with large libraries like babylonjs used by 3d hack, this will drastically reduce build time
 1. run `npm start` or `npm run build`
 	- `start` will watch the input files and rebuild automatically when they're changed
 	- `build` will run once
@@ -38,9 +39,6 @@ caveats:
 	- i.e. unpublished bugs
 - custom hacks here use absolute imports, whereas ones in the hack repo are relative
 	- e.g. `import '@bitsy/hecks/src/bitsymuse';` vs. `import './bitsymuse';`
-- some hacks might use very large libraries that can slow down build time. as of now this is the case with 3d hack. it uses babylonjs library and can take much longer to build than the other hacks (this might also depend on your hardware). if you are using 3d hack and long build time is the problem, there is an option you can use to make build time reasonable:
-	- open `index.mjs` file that contains build script
-	- uncomment the following line: `// externalDeps.babylonjs = 'BABYLON';`
 
 ## examples for editing `./input/hacks.js`
 

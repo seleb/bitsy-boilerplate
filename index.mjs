@@ -3,28 +3,24 @@ import getCss from './getCss';
 import optimize from '@bitsy/optimizer';
 import optimizeOptions from './input/optimization';
 import resolve from 'resolve';
+import externalDeps from './external-deps';
 
 const fsp = fs.promises;
 
 const fontName = 'ascii_small';
 
 async function build() {
-	const externalDeps = {};
-
-	// specify what dependencies should be written to the output directly,
-	// instead of being transpiled by rollup when building the hacks.
-	// can reduce build time when dealing with large libraries like babylon (used by 3d hack)
-	// further dependencies won't be resolved! only use on libraries that are bundled
-	// and don't have any external dependencies on their own.
-	// uncomment the following line if you are using 3d hack and need faster build time:
-	// externalDeps.babylonjs = 'BABYLON';
-
 	const externalDepsSrc = await Promise.all(Object.keys(externalDeps).map(function (dep) {
 		try {
 			return fsp.readFile(resolve.sync(dep));
 		}
 		catch {
-			return fsp.readFile(resolve.sync(dep, {basedir: resolve.sync('@bitsy/hecks')}));
+			try {
+				return fsp.readFile(resolve.sync(dep, {basedir: resolve.sync('@bitsy/hecks')}));
+			}
+			catch {
+				console.log(`couldn't find dependency '${dep}' in node modules\nyou might want to include it manually in html template`);
+			}
 		}
 	}));
 
