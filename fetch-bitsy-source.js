@@ -2,8 +2,8 @@
 // https://github.com/request/request-promise-native/issues/1
 const fs = require('fs');
 const path = require('path');
-// const readline = require('readline');
 const rp = require('request-promise-native');
+const prompts = require('prompts');
 
 const fsp = fs.promises;
 
@@ -37,14 +37,24 @@ async function fetchFile(url, savePath) {
 
 async function fetchBitsyFiles(version = safeCommit) {
 	console.log('installing bitsy files');
-	// TODO: use readline to ask for confirmation if template.html already exists
-	// it will be useful after inculding bitsy source in the repo itself too,
-	// keeping this script to be able to fetch updates
-	fsp.access(path.join('.', 'input', 'template.html'), fs.constants.F_OK)
-		.then(() => console.log("template.html already exists! do you want to overwrite it? (y/n)\nconsider making a backup first if you don't want to loose your work"))
-		.catch(function(){return});
+	// check if ./input/template.html already exists
+	try {
+		await fsp.access(path.join('.', 'input', 'template.html'), fs.constants.F_OK);
+		const response = await prompts({
+			type: 'confirm',
+			name: 'confirmed',
+			message: "template.html already exists. do you want to overwrite it?\n  (consider making a backup first if you don't want to loose your work)\n",
+		});
+		if (!response.confirmed) {
+			return;
+		}
+	}
+	catch (err) {
+		// if fsp.access threw an error, it means the file doesn't exists
+		// and we simply proceed to fetch the files
+	}
 
-	let paths = JSON.parse(await fsp.readFile('./bitsy-paths.json'));
+	const paths = JSON.parse(await fsp.readFile('./bitsy-paths.json'));
 	// arrays of paths into array of promises
 	return Promise.all(Object.values(paths).map(function([repoPath, savePath]) {
 		return fetchFile([bitsySourceUrl, version, repoPath].join('/'), savePath);
