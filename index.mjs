@@ -73,5 +73,5 @@ async function build() {
 }
 
 build()
-	.then(() => console.log('😸'))
-	.catch(err => console.error('😿\n', err));
+	.then(() => console.log('👍'))
+	.catch(err => console.error('👎\n', err));
