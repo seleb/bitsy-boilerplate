@@ -4,26 +4,41 @@
   "description": "tool for building bitsy games",
   "main": "index.js",
   "scripts": {
-    "start": "npm-watch build",
-    "build": "node --experimental-modules index.mjs"
+    "build-hacks": "rollup -c",
+    "build-html": "node --experimental-modules index.mjs",
+    "watch-hacks": "npm-watch build-hacks",
+    "watch-html": "npm-watch build-html",
+    "build": "npm run build-hacks&&npm run build-html",
+    "start": "concurrently 'npm:watch-*'"
   },
   "author": "Sean S. LeBlanc",
   "license": "MIT",
   "dependencies": {
-    "@bitsy/hecks": "^5.0.0",
+    "@bitsy/hecks": "^7.0.0",
     "@bitsy/optimizer": "^1.0.1",
     "Bitsy": "github:le-doux/bitsy#9c3dcc5dafd77023c67d9b532d207f431eccd88b",
-    "npm-watch": "^0.6.0"
+    "concurrently": "^4.1.2",
+    "npm-watch": "^0.6.0",
+    "rollup": "^1.19.4",
+    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-node-resolve": "^5.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.1",
     "postcss": "^7.0.17"
   },
   "watch": {
-    "build": {
+    "build-hacks": {
       "patterns": [
-        "input"
+        "input/hacks.js"
+      ]
+    },
+    "build-html": {
+      "patterns": [
+        "input",
+        "output/hacks.js"
       ],
+      "ignore": "input/hacks.js",
       "extensions": "txt,js,mjs,css"
     }
   }

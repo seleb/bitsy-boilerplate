@@ -22,7 +22,7 @@ async function build() {
 	const fontData = await fsp.readFile(`./node_modules/Bitsy/editor/shared/bitsyfont/${fontName}.bitsyfont`);
 
 	const css = await getCss('./input/style.css');
-	const { default: buildHacks } = await import('@bitsy/hecks');
+	const hacks = await fsp.readFile(`./output/hacks.js`);
 
 	const config = {
 		'@@T': title,
@@ -37,7 +37,7 @@ async function build() {
 		'@@E': bitsy,
 		'@@N': fontName,
 		'@@M': fontData,
-		'</head>': ['<script>', (await buildHacks(['./input/hacks.js']))[0], '</script>', '</head>'].join('\n'),
+		'</head>': ['<script>', hacks, '</script>', '</head>'].join('\n'),
 	};
 
 	const html = Object.entries(config)
