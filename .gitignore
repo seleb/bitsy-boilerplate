@@ -1,5 +1,7 @@
+dist/*
 /output
-index.html
+/bitsy-source
+/input/template.html
 
 # Logs
 logs

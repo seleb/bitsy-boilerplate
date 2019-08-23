@@ -7,16 +7,20 @@ the idea behind this is sort of like a scripted version of [Borksy](https://ayol
 ## how
 
 1. run `npm i`
-1. copy-paste your gamedata into `./input/gamedata.txt`
+	* optionally add path to your local bitsy-hacks repo:
+	`npm i /path/to/local/bitsy-hacks && npm run fetch-bitsy`
+1. copy-paste your gamedata into `./input/gamedata.bitsy`
 1. edit `./input/title.txt` to be what you want the HTML title to be
 1. edit `./input/style.css` with custom style
 1. edit `./input/hacks.js` with hack inputs/options
 1. edit `./input/optimization.js` with optimization options
+1. edit `./input/template.html` to add custom html, for example if you need to add audio
+1. edit `./external-deps.mjs` to specify what dependencies should be written to the output directly instead of being transpiled by rollup when building the hacks. in case with large libraries like babylonjs used by 3d hack, this will drastically reduce build time
 1. run `npm start` or `npm run build`
 	- `start` will watch the input files and rebuild automatically when they're changed
 	- `build` will run once
 1. edit/rebuild as needed
-1. copy the generated `./index.html` when you're done
+1. copy the generated `./dist/index.html` when you're done
 
 ## why
 
@@ -35,7 +39,6 @@ caveats:
 	- i.e. unpublished bugs
 - custom hacks here use absolute imports, whereas ones in the hack repo are relative
 	- e.g. `import '@bitsy/hecks/src/bitsymuse';` vs. `import './bitsymuse';`
-
 
 ## examples for editing `./input/hacks.js`
 
