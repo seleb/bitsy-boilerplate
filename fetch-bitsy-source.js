@@ -26,7 +26,6 @@ async function fetchFile(url, savePath) {
 	}
 
 	if (response && response.statusCode == 200) {
-		// console.log(`saved: ${url}\nas: ${savePath}`);
 		return fse.outputFile(savePath, response.body);
 	} else {
 		throw new Error(`couldn't download ${url}\nresponse status code: ${response && response.statusCode}`);
