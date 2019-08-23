@@ -48,9 +48,9 @@ async function fetchBitsyFiles(version = safeCommit) {
 
 	const paths = JSON.parse(await fse.readFile('./bitsy-paths.json'));
 	// arrays of paths into array of promises
-	return Promise.all(Object.values(paths).map(([repoPath, savePath]) => {
-		fetchFile([bitsySourceUrl, version, repoPath].join('/'), savePath);
-	}));
+	return Promise.all(Object.values(paths).map(([repoPath, savePath]) => (
+		fetchFile([bitsySourceUrl, version, repoPath].join('/'), savePath)
+	)));
 }
 
 fetchBitsyFiles(latest)
