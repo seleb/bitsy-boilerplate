@@ -43,7 +43,7 @@ async function fetchBitsyFiles(version = safeCommit) {
 		const response = await prompts({
 			type: 'confirm',
 			name: 'confirmed',
-			message: "template.html already exists. do you want to overwrite it?\n  (consider making a backup first if you don't want to loose your work)\n",
+			message: "template.html already exists. do you want to overwrite it?\n  (consider making a backup first if you don't want to lose your work)\n",
 		});
 		if (!response.confirmed) {
 			return;
