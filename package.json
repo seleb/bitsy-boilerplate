@@ -19,6 +19,7 @@
     "@bitsy/hecks": "^7.0.0",
     "@bitsy/optimizer": "^1.0.1",
     "concurrently": "^4.1.2",
+    "fs-extra": "^8.1.0",
     "npm-watch": "^0.6.0",
     "prompts": "^2.2.1",
     "request": "^2.88.0",
