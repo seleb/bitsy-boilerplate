@@ -13,8 +13,7 @@ async function fetchFile(url, savePath) {
 	let response;
 	try {
 		response = await fetch(url);
-	}
-	catch (err) {
+	} catch (err) {
 		throw new Error(`${url} is not available\n${err.error}`);
 	}
 
