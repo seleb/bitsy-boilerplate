@@ -26,17 +26,17 @@ async function build() {
 	const gamedata = await fse.readFile('./input/gamedata.bitsy', 'utf8');
 	const template = await fse.readFile('./input/template.html', 'utf8');
 
-	const bitsy = await fse.readFile('./bitsy-source/scripts/bitsy.js');
-	const font = await fse.readFile('./bitsy-source/scripts/font.js');
-	const dialog = await fse.readFile('./bitsy-source/scripts/dialog.js');
-	const script = await fse.readFile('./bitsy-source/scripts/script.js');
-	const color_util = await fse.readFile('./bitsy-source/scripts/color_util.js');
-	const transition = await fse.readFile('./bitsy-source/scripts/transition.js');
-	const renderer = await fse.readFile('./bitsy-source/scripts/renderer.js');
-	const fontData = await fse.readFile(`./bitsy-source/fonts/${fontName}.bitsyfont`);
+	const bitsy = await fse.readFile('./.working/bitsy/scripts/bitsy.js');
+	const font = await fse.readFile('./.working/bitsy/scripts/font.js');
+	const dialog = await fse.readFile('./.working/bitsy/scripts/dialog.js');
+	const script = await fse.readFile('./.working/bitsy/scripts/script.js');
+	const color_util = await fse.readFile('./.working/bitsy/scripts/color_util.js');
+	const transition = await fse.readFile('./.working/bitsy/scripts/transition.js');
+	const renderer = await fse.readFile('./.working/bitsy/scripts/renderer.js');
+	const fontData = await fse.readFile(`./.working/bitsy/fonts/${fontName}.bitsyfont`);
 
 	const css = await getCss('./input/style.css');
-	const hacks = await fse.readFile(`./output/hacks.js`);
+	const hacks = await fse.readFile(`./.working/hacks.js`);
 
 	const config = {
 		'@@T': title,
@@ -60,7 +60,7 @@ async function build() {
 			template
 		);
 
-	await fse.outputFile('./dist/index.html', html);
+	await fse.outputFile('./output/index.html', html);
 }
 
 build()

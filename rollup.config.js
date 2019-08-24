@@ -20,6 +20,6 @@ export default {
 			...base.output.globals,
 			...external,
 		},
-		file: './output/hacks.js',
+		file: './.working/hacks.js',
 	},
 };

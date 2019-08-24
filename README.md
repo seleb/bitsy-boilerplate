@@ -20,7 +20,7 @@ the idea behind this is sort of like a scripted version of [Borksy](https://ayol
 	- `start` will watch the input files and rebuild automatically when they're changed
 	- `build` will run once
 1. edit/rebuild as needed
-1. copy the generated `./dist/index.html` when you're done
+1. copy the generated `./output/index.html` when you're done
 
 ## why
 

@@ -42,7 +42,7 @@
     "build-html": {
       "patterns": [
         "input",
-        "output/hacks.js"
+        ".working"
       ],
       "ignore": "input/hacks.js",
       "extensions": "txt,js,mjs,css,bitsy,html"

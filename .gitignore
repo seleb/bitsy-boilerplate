@@ -1,6 +1,5 @@
-dist/*
+/.working
 /output
-/bitsy-source
 /input/template.html
 
 # Logs
