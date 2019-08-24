@@ -2,6 +2,7 @@ import fse from 'fs-extra';
 import path from 'path';
 import fetch from 'node-fetch';
 import prompts from 'prompts';
+import bitsyPaths from './bitsy-paths.json';
 
 const bitsySourceUrl = 'https://raw.githubusercontent.com/le-doux/bitsy';
 const latest = 'master';
@@ -38,9 +39,8 @@ async function fetchBitsyFiles(version = safeCommit) {
 		}
 	}
 
-	const paths = JSON.parse(await fse.readFile('./bitsy-paths.json'));
 	// arrays of paths into array of promises
-	return Promise.all(Object.values(paths).map(([repoPath, savePath]) => (
+	return Promise.all(Object.values(bitsyPaths).map(([repoPath, savePath]) => (
 		fetchFile([bitsySourceUrl, version, repoPath].join('/'), savePath)
 	)));
 }
