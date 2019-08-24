@@ -1,7 +1,7 @@
-const fse = require('fs-extra');
-const path = require('path');
-const fetch = require('node-fetch');
-const prompts = require('prompts');
+import fse from 'fs-extra';
+import path from 'path';
+import fetch from 'node-fetch';
+import prompts from 'prompts';
 
 const bitsySourceUrl = 'https://raw.githubusercontent.com/le-doux/bitsy';
 const latest = 'master';
