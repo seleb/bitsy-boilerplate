@@ -12,12 +12,12 @@ async function build() {
 	const externalDepsSrc = await Promise.all(Object.keys(externalDeps).map(function (dep) {
 		try {
 			return fse.readFile(resolve.sync(dep));
-		}
-		catch {
+		} catch {
 			try {
-				return fse.readFile(resolve.sync(dep, {basedir: resolve.sync('@bitsy/hecks')}));
-			}
-			catch {
+				return fse.readFile(resolve.sync(dep, {
+					basedir: resolve.sync('@bitsy/hecks')
+				}));
+			} catch {
 				console.log(`couldn't find dependency '${dep}' in node modules\nyou might want to include it manually in html template`);
 			}
 		}
