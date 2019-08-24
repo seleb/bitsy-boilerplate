@@ -4,6 +4,7 @@ import optimize from '@bitsy/optimizer';
 import optimizeOptions from './input/optimization';
 import resolve from 'resolve';
 import externalDeps from './external-deps';
+import bitsyPaths from './bitsy-paths.json';
 
 const fontName = 'ascii_small';
 
@@ -24,33 +25,30 @@ async function build() {
 
 	const title = await fse.readFile('./input/title.txt');
 	const gamedata = await fse.readFile('./input/gamedata.bitsy', 'utf8');
-	const template = await fse.readFile('./input/template.html', 'utf8');
+	const template = await fse.readFile(bitsyPaths.template[1], 'utf8');
 
-	const bitsy = await fse.readFile('./.working/bitsy/scripts/bitsy.js');
-	const font = await fse.readFile('./.working/bitsy/scripts/font.js');
-	const dialog = await fse.readFile('./.working/bitsy/scripts/dialog.js');
-	const script = await fse.readFile('./.working/bitsy/scripts/script.js');
-	const color_util = await fse.readFile('./.working/bitsy/scripts/color_util.js');
-	const transition = await fse.readFile('./.working/bitsy/scripts/transition.js');
-	const renderer = await fse.readFile('./.working/bitsy/scripts/renderer.js');
-	const fontData = await fse.readFile(`./.working/bitsy/fonts/${fontName}.bitsyfont`);
+	const fontData = await fse.readFile(bitsyPaths[fontName][1]);
 
 	const css = await getCss('./input/style.css');
 	const hacks = await fse.readFile(`./.working/hacks.js`);
+	const bitsyScripts = await Promise.all(
+		Object.entries(bitsyPaths) // get all the bitsy files
+		.filter(([key]) => key.startsWith('@@')) // filter out non-scripts
+		.map(async ([key, [, path]]) => [key, await fse.readFile(path)]) // convert to map of promises resolving with [key, script]
+	);
 
 	const config = {
 		'@@T': title,
 		'@@D': Object.values(optimizeOptions).includes(true) ? optimize(gamedata, optimizeOptions) : gamedata,
 		"@@C": css,
-		'@@U': color_util,
-		'@@X': transition,
-		'@@F': font,
-		'@@S': script,
-		'@@L': dialog,
-		'@@R': renderer,
-		'@@E': bitsy,
 		'@@N': fontName,
 		'@@M': fontData,
+
+		...bitsyScripts.reduce((r, [key, file]) => ({
+			...r,
+			[key]: file,
+		}), {}),
+
 		'</head>': ['<script>', externalDepsSrc.join('\n'), hacks, '</script>', '</head>'].join('\n'),
 	};
 

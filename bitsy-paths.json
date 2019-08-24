@@ -3,31 +3,31 @@
     "dev/resources/export/exportTemplate.html",
     "input/template.html"
   ],
-  "bitsy": [
+  "@@E": [
     "editor/script/engine/bitsy.js",
     ".working/bitsy/scripts/bitsy.js"
   ],
-  "font": [
+  "@@F": [
     "editor/script/engine/font.js",
     ".working/bitsy/scripts/font.js"
   ],
-  "dialog": [
+  "@@L": [
     "editor/script/engine/dialog.js",
     ".working/bitsy/scripts/dialog.js"
   ],
-  "script": [
+  "@@S": [
     "editor/script/engine/script.js",
     ".working/bitsy/scripts/script.js"
   ],
-  "color_util": [
+  "@@U": [
     "editor/script/engine/color_util.js",
     ".working/bitsy/scripts/color_util.js"
   ],
-  "transition": [
+  "@@X": [
     "editor/script/engine/transition.js",
     ".working/bitsy/scripts/transition.js"
   ],
-  "renderer": [
+  "@@R": [
     "editor/script/engine/renderer.js",
     ".working/bitsy/scripts/renderer.js"
   ],
