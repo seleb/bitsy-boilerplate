@@ -49,7 +49,7 @@ async function build() {
 			[key]: file,
 		}), {}),
 
-		'</head>': ['<script>', externalDepsSrc.join('\n'), hacks, '</script>', '</head>'].join('\n'),
+		'</head>': `${externalDepsSrc.concat(hacks).map(s => `<script>\n${s}\n</script>`).join('\n')}\n</head>`,
 	};
 
 	const html = Object.entries(config)
