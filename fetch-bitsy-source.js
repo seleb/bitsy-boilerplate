@@ -1,8 +1,6 @@
-// es6 import syntax doesn't work with request-promise-native at the moment
-// https://github.com/request/request-promise-native/issues/1
 const fse = require('fs-extra');
 const path = require('path');
-const rp = require('request-promise-native');
+const fetch = require('node-fetch');
 const prompts = require('prompts');
 
 const bitsySourceUrl = 'https://raw.githubusercontent.com/le-doux/bitsy';
@@ -11,24 +9,18 @@ const safeCommit = '5b9a239c74b47b0f6309effc3f6f550727a77cde';
 
 async function fetchFile(url, savePath) {
 	console.log(`fetching ${path.basename(savePath)}`);
-	const requestOptions = {
-		method: 'GET',
-		uri: url,
-		resolveWithFullResponse: true
-	}
-
 	let response;
 	try {
-		response = await rp(requestOptions);
+		response = await fetch(url);
 	}
 	catch (err) {
 		throw new Error(`${url} is not available\n${err.error}`);
 	}
 
-	if (response && response.statusCode == 200) {
-		return fse.outputFile(savePath, response.body);
+	if (response.ok) {
+		return fse.outputFile(savePath, await response.text());
 	} else {
-		throw new Error(`couldn't download ${url}\nresponse status code: ${response && response.statusCode}`);
+		throw new Error(`couldn't download ${url}\nresponse status code: ${response.status}`);
 	}
 }
 
