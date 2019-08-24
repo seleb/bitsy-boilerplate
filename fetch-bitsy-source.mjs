@@ -46,7 +46,7 @@ async function fetchBitsyFiles(version = safeCommit) {
 }
 
 fetchBitsyFiles(latest)
-	.then(x => console.log('😸'))
+	.then(() => console.log('😸'))
 	.catch(err => {
 		console.error('😿');
 		console.error(err);
