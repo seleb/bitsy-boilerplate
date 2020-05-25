@@ -16,7 +16,7 @@
   "author": "Sean S. LeBlanc & Elkie Nova",
   "license": "MIT",
   "dependencies": {
-    "@bitsy/hecks": "^13.1.5",
+    "@bitsy/hecks": "^13.1.6",
     "@bitsy/optimizer": "^1.0.1",
     "concurrently": "^5.2.0",
     "fs-extra": "^9.0.0",
@@ -24,7 +24,7 @@
     "npm-watch": "^0.6.0",
     "prompts": "^2.3.2",
     "resolve": "^1.17.0",
-    "rollup": "^2.10.3",
+    "rollup": "^2.10.9",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0"
   },
