@@ -16,21 +16,21 @@
   "author": "Sean S. LeBlanc & Elkie Nova",
   "license": "MIT",
   "dependencies": {
-    "@bitsy/hecks": "^13.1.7",
+    "@bitsy/hecks": "^13.2.2",
     "@bitsy/optimizer": "^1.0.1",
     "concurrently": "^5.2.0",
-    "fs-extra": "^9.0.0",
+    "fs-extra": "^9.0.1",
     "node-fetch": "^2.6.0",
     "npm-watch": "^0.6.0",
     "prompts": "^2.3.2",
     "resolve": "^1.17.0",
-    "rollup": "^2.11.2",
+    "rollup": "^2.17.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.0",
-    "postcss": "^7.0.31"
+    "autoprefixer": "^9.8.2",
+    "postcss": "^7.0.32"
   },
   "watch": {
     "build-hacks": {
