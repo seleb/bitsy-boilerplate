@@ -16,7 +16,7 @@
   "author": "Sean S. LeBlanc & Elkie Nova",
   "license": "MIT",
   "dependencies": {
-    "@bitsy/hecks": "^13.4.3",
+    "@bitsy/hecks": "^13.5.2",
     "@bitsy/optimizer": "^1.1.0",
     "concurrently": "^5.3.0",
     "fs-extra": "^9.0.1",
