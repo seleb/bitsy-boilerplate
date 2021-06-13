@@ -22,15 +22,15 @@
     "fs-extra": "^9.1.0",
     "node-fetch": "^2.6.1",
     "npm-watch": "^0.6.0",
-    "prompts": "^2.4.0",
+    "prompts": "^2.4.1",
     "resolve": "^1.20.0",
-    "rollup": "^2.39.0",
+    "rollup": "^2.51.2",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.35"
+    "postcss": "^7.0.36"
   },
   "watch": {
     "build-hacks": {
