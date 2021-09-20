@@ -3,33 +3,33 @@
     "dev/resources/export/exportTemplate.html",
     "input/template.html"
   ],
-  "@@E": [
-    "editor/script/engine/bitsy.js",
-    ".working/bitsy/scripts/bitsy.js"
-  ],
-  "@@F": [
-    "editor/script/engine/font.js",
-    ".working/bitsy/scripts/font.js"
-  ],
-  "@@L": [
-    "editor/script/engine/dialog.js",
-    ".working/bitsy/scripts/dialog.js"
-  ],
-  "@@S": [
-    "editor/script/engine/script.js",
-    ".working/bitsy/scripts/script.js"
-  ],
-  "@@U": [
-    "editor/script/engine/color_util.js",
-    ".working/bitsy/scripts/color_util.js"
+  "@@Y": [
+    "editor/script/engine/system.js",
+    ".working/bitsy/scripts/system.js"
   ],
   "@@X": [
     "editor/script/engine/transition.js",
     ".working/bitsy/scripts/transition.js"
   ],
+  "@@F": [
+    "editor/script/engine/font.js",
+    ".working/bitsy/scripts/font.js"
+  ],
+  "@@S": [
+    "editor/script/engine/script.js",
+    ".working/bitsy/scripts/script.js"
+  ],
+  "@@L": [
+    "editor/script/engine/dialog.js",
+    ".working/bitsy/scripts/dialog.js"
+  ],
   "@@R": [
     "editor/script/engine/renderer.js",
     ".working/bitsy/scripts/renderer.js"
+  ],
+  "@@E": [
+    "editor/script/engine/bitsy.js",
+    ".working/bitsy/scripts/bitsy.js"
   ],
   "arabic": [
     "dev/resources/bitsyfont/arabic.bitsyfont",

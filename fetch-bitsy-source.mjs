@@ -1,6 +1,6 @@
 import fse from 'fs-extra';
-import path from 'path';
 import fetch from 'node-fetch';
+import path from 'path';
 import prompts from 'prompts';
 import bitsyPaths from './bitsy-paths.json';
 
@@ -39,6 +39,7 @@ async function fetchBitsyFiles(version = safeCommit) {
 	}
 
 	// arrays of paths into array of promises
+	// reference: https://github.com/le-doux/bitsy/blob/2a36b8d559fe1ccf54704f205f0745e3f947330c/editor/script/exporter.js#L31
 	return Promise.all(Object.values(bitsyPaths).map(([repoPath, savePath]) => (
 		fetchFile([bitsySourceUrl, version, repoPath].join('/'), savePath)
 	)));
