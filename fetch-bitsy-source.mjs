@@ -2,7 +2,7 @@ import fse from 'fs-extra';
 import fetch from 'node-fetch';
 import path from 'path';
 import prompts from 'prompts';
-import bitsyPaths from './bitsy-paths.json';
+import bitsyPaths from './bitsy-paths.json' assert { type: "json" };
 
 const bitsySourceUrl = 'https://raw.githubusercontent.com/le-doux/bitsy';
 const latest = 'master';
