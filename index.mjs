@@ -4,7 +4,7 @@ import optimize from '@bitsy/optimizer';
 import optimizeOptions from './input/optimization';
 import resolve from 'resolve';
 import externalDeps from './external-deps';
-import bitsyPaths from './bitsy-paths.json';
+import bitsyPaths from './bitsy-paths.json' assert { type: "json" };
 
 const fontName = 'ascii_small';
 
