@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-hacks": "rollup -c",
-    "build-html": "node --experimental-modules --es-module-specifier-resolution=node index.mjs",
+    "build-html": "node --experimental-modules --experimental-json-modules --es-module-specifier-resolution=node index.mjs",
     "watch-hacks": "npm-watch build-hacks",
     "watch-html": "npm-watch build-html",
     "build": "npm run build-hacks&&npm run build-html",
