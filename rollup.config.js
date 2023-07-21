@@ -1,7 +1,7 @@
-import nodeResolve from "rollup-plugin-node-resolve";
+import base from "@bitsy/hecks/rollup.config.base.json" assert { type: "json" };
 import commonjs from "rollup-plugin-commonjs";
-import base from "@bitsy/hecks/rollup.config.base";
-import external from "./external-deps";
+import nodeResolve from "rollup-plugin-node-resolve";
+import external from "./external-deps.mjs";
 
 export default {
 	...base,

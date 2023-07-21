@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "tool for building bitsy games",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build-hacks": "rollup -c",
     "build-html": "node --experimental-modules --experimental-json-modules --es-module-specifier-resolution=node index.mjs",
@@ -26,7 +27,7 @@
     "postcss": "^8.4.27",
     "prompts": "^2.4.1",
     "resolve": "^1.22.2",
-    "rollup": "^2.52.3",
+    "rollup": "^3.26.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0"
   },
