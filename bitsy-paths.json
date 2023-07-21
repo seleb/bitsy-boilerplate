@@ -3,9 +3,29 @@
     "dev/resources/export/exportTemplate.html",
     "input/template.html"
   ],
+  "@@I": [
+    "editor/script/system/input.js",
+    ".working/bitsy/scripts/input.js"
+  ],
+  "@@P": [
+    "editor/script/system/soundchip.js",
+    ".working/bitsy/scripts/soundchip.js"
+  ],
+  "@@G": [
+    "editor/script/system/graphics.js",
+    ".working/bitsy/scripts/graphics.js"
+  ],
   "@@Y": [
-    "editor/script/engine/system.js",
+    "editor/script/system/system.js",
     ".working/bitsy/scripts/system.js"
+  ],
+  "@@W": [
+    "editor/script/engine/world.js",
+    ".working/bitsy/scripts/world.js"
+  ],
+  "@@O": [
+    "editor/script/engine/sound.js",
+    ".working/bitsy/scripts/sound.js"
   ],
   "@@X": [
     "editor/script/engine/transition.js",
